@@ -1,5 +1,6 @@
-# django-ecommerce
-An e-commerce website built with Django
+# django-ecommerce-with-stripe
+
+An e-commerce site built with Django and Stripe where multiple vendors can sell their products
 
 
 ```
@@ -35,6 +36,15 @@ DB Admin: 'admin', 'admin@example.com', 'adminpass'
 <br>
 Settings.py 
 
- ADD STRIPE PUB KEY AND STRIPE SECRET KEY
+- [ ] ADD STRIPE PUB KEY AND STRIPE SECRET KEY
+- [ ] ADD EMAIL INFORMATION
 
- ADD EMAIL INFORMATION
+
+
+##### Project Output
+![homeOutput](https://github.com/elifnurkarakoc/django-ecommerce/blob/main/output/home.jpg)
+
+![cartOutput](https://github.com/elifnurkarakoc/django-ecommerce/blob/main/output/cart.jpg)
+
+ 
+ 
