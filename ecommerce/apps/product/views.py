@@ -49,16 +49,3 @@ def category(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
 
     return render(request, 'product/category.html', {'category': category})
-
-
-""" def download_file(request):
-    product = get_object_or_404(Product)
-
-    fl_path = settings.MEDIA_ROOT + product.pdf_file
-    file_name = str(product.pdf_file).replace('/uploads', '')
-
-    fl = open(fl_path, 'r')
-    mime_type = mimetypes.guess_type(settings.MEDIA_ROOT)
-    response = HttpResponse(fl, content_type=mime_type)
-    response['Content-Disposition'] = 'attachment; filename=' + file_name
-    return response """

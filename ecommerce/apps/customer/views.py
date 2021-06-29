@@ -61,7 +61,7 @@ class LoginView(View):
             user = auth.authenticate(username=username, password=password)
 
             if user:
-                if user.is_customer:  # user.is_active &
+                if user.is_customer:
                     auth.login(request, user)
                     return redirect('customer_profile')
                 messages.error(

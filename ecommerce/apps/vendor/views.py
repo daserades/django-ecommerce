@@ -91,8 +91,6 @@ def edit_vendor(request):
         if vendor.name==name:
             vendor.created_by.email=email
             vendor.created_by.save()
-
-            #vendor.name=name
             vendor.save()
 
             return redirect('vendor_admin')
