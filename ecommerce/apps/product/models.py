@@ -1,11 +1,9 @@
 from io import BytesIO
 from PIL import Image
 from django.core.files import File
-
 from django.db import models
-
 from apps.vendor.models import Vendor
-# Create your models here.
+
 
 class Category(models.Model):
     title=models.CharField(max_length=255)
@@ -19,16 +17,15 @@ class Category(models.Model):
         return self.title
 
 class Product(models.Model):
-    category=models.ForeignKey(Category,related_name='products',on_delete=models.CASCADE, verbose_name="Kategori")
+    category=models.ForeignKey(Category,related_name='products',on_delete=models.CASCADE)
     vendor=models.ForeignKey(Vendor,related_name='products',on_delete=models.CASCADE )
-    title=models.CharField(max_length=255, verbose_name="Ürün adı")
+    title=models.CharField(max_length=255)
     slug=models.SlugField(max_length=255)
-    description=models.TextField(blank=True,null=True, verbose_name="Açıklama")
-    price=models.DecimalField(max_digits=6,decimal_places=2, verbose_name="Ücret")
+    description=models.TextField(blank=True,null=True)
+    price=models.DecimalField(max_digits=6,decimal_places=2)
     date_added=models.DateTimeField(auto_now_add=True)
-    image=models.ImageField(upload_to='uploads/',blank=True,null=True , verbose_name="Görsel")
+    image=models.ImageField(upload_to='uploads/',blank=True,null=True)
     thumbnail=models.ImageField(upload_to='uploads/',blank=True,null=True)
-   ## pdf_file=models.FileField(null=True,blank=True,upload_to='uploads/',verbose_name="PDF")
 
     class Meta:
         ordering=['-date_added']

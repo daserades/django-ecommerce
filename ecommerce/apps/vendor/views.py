@@ -20,6 +20,7 @@ from weasyprint import HTML
 import mimetypes
 import os
 from django.conf import settings
+
 @unauthenticated_user
 def become_vendor(request):
     if request.method == 'POST':
@@ -39,7 +40,6 @@ def become_vendor(request):
 
 
 @login_required
-#@allowed_users(allowed_roles=['vendor'])
 @vendor_required
 def vendor_admin(request):
     vendor = request.user.vendor
