@@ -1,0 +1,34 @@
+
+<!--Card-->
+    <div class="card">
+
+        <!--Card image-->
+        <div class="view overlay">
+            <img src="{{ product.get_thumbnail }}" class=" mx-auto w-100 " style="height: 300px; width: 300px;"alt="">
+            <a href="{% url 'product' product.category.slug product.slug %}">
+            <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+        <!--Card image-->
+
+        <!--Card content-->
+        <div class="card-body text-center">
+            <!--Category & Title-->
+            <a href="{% url 'category' product.category.slug %}" class="grey-text">
+            <h5>{{ product.category}}</h5>
+            </a>
+            <h5>
+            <strong>
+                <a href="{% url 'product' product.category.slug product.slug %}" class="dark-grey-text">{{ product.title }}</a>
+            </strong>
+            </h5>
+
+            <h4 class="font-weight-bold black-text">
+            <strong>{{ product.price }} $</strong>
+            </h4>
+
+        </div>
+        <!--Card content-->
+
+    </div>
+    <!--Card-->

@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Welcome | {% endblock %}
+
+{% block content %}
+<section class="text-center mb-4">
+<br>
+<h3 class="black-text" >New Products</h3>
+<hr>
+<br>
+<div class="row wow fadeIn">
+        
+    {% for product in newest_products %}
+    <div class="col-lg-4 col-md-6 mb-4">
+        {% include 'product/parts/list_item.html' %}
+    </div>
+    {% endfor %}   
+</div>
+</section>
+
+{% endblock %}

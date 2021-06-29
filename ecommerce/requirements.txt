@@ -1,0 +1,5 @@
+django
+Pillow
+WeasyPrint
+django-crispy-forms
+Stripe
